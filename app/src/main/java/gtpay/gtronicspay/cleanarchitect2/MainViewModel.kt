@@ -3,11 +3,15 @@ package gtpay.gtronicspay.cleanarchitect2
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import gtpay.gtronicspay.domain.models.SaveUserNameParam
 import gtpay.gtronicspay.domain.usecases.GetUserNameUseCase
 import gtpay.gtronicspay.domain.usecases.SaveUserNameUseCase
+import javax.inject.Inject
 
-class MainViewModel(
+
+@HiltViewModel
+class MainViewModel @Inject constructor(
     private val getUserNameUseCase: GetUserNameUseCase,
     private val saveUserNameUseCase: SaveUserNameUseCase
     ) : ViewModel() {
